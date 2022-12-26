@@ -20,30 +20,32 @@ public class ExitFromMyAccountTest extends BaseTest{
     @DisplayName("Exit from my account")
     public void exitFromMyAccountTest() throws InterruptedException {
         MainPage mainPage = new MainPage(driver);
+        sleep(1000);
         mainPage.waitClickable(mainPage.getButtonMyAccount()).clickLoginButton(mainPage.getButtonMyAccount());
         LoginPage loginPage = new LoginPage(driver);
-        sleep(200);
+        sleep(1000);
         loginPage.waitClickable(loginPage.getButtonRegisterLink()).clickRegister();
         RegisterPage registerPage = new RegisterPage(driver);
-        sleep(200);
+        sleep(1000);
         //Создание пользователя
         registerPage.waitClickable(registerPage.getInputName()).typeInput(registerPage.getInputName(), name)
                 .clickElement(registerPage.getInputEmail()).typeInput(registerPage.getInputEmail(), email)
                 .clickElement(registerPage.getInputPassword()).typeInput(registerPage.getInputPassword(), password)
                 .clickRegister();
         //ввод почты и пароля на странице Логин
-        sleep(200);
+        sleep(1000);
         loginPage.waitClickable(loginPage.getInputEmail()).clickElement(loginPage.getInputEmail())
                 .typeInput(loginPage.getInputEmail(), email)
                 .clickElement(loginPage.getInputPassword()).typeInput(loginPage.getInputPassword(), password)
                 .clickEnter();
-        sleep(200);
+        sleep(1000);
         mainPage.waitClickable(mainPage.getButtonMyAccount())
                 .clickLoginButton(mainPage.getButtonMyAccount());
         //Заходим в Личный кабинет
         AccountProfilePage accountProfilePage = new AccountProfilePage(driver);
-        sleep(200);
+        sleep(1000);
         accountProfilePage.waitClickable(accountProfilePage.getButtonExit()).clickExit();
+        sleep(1000);
         boolean isDisplayedEnter = loginPage.isDisplayedEnterSign();
         assertTrue(isDisplayedEnter);
     }

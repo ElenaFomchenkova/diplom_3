@@ -23,7 +23,7 @@ public class MainPage {
     //Кнопка личный кабинет (на чердаке)
     private WebElement buttonMyAccount;
 
-    @FindBy(xpath = ".//button[@class = 'button_button__33qZ0 button_button_type_primary__1O7Bx button_button_size_large__G21Vg']")
+    @FindBy(xpath = ".//button[text() = 'Войти в аккаунт']")
     //Кнопка войти в аккаунт(под конструктором без логина)
     private WebElement buttonEnterAccount;
 
@@ -66,7 +66,7 @@ public class MainPage {
     }
 
     public MainPage waitClickable(WebElement element){ //ждем, пока элемент станет кликабельным
-        new WebDriverWait(driver, Duration.ofSeconds(300))
+        new WebDriverWait(driver, Duration.ofSeconds(600))
                 .until(ExpectedConditions.elementToBeClickable(element));
         return this;
     }

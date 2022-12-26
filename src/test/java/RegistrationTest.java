@@ -21,12 +21,13 @@ public class RegistrationTest extends BaseTest {
     @DisplayName("Registration of user")
     public void registrationMyAccountTest() throws InterruptedException {
         MainPage mainPage = new MainPage(driver);
+        sleep(1000);
         mainPage.waitClickable(mainPage.getButtonMyAccount()).clickLoginButton(mainPage.getButtonMyAccount());
         LoginPage loginPage = new LoginPage(driver);
-        sleep(200);
+        sleep(1000);
         loginPage.waitClickable(loginPage.getButtonRegisterLink()).clickRegister();
         RegisterPage registerPage = new RegisterPage(driver);
-        sleep(200);
+        sleep(1000);
         boolean result = registerPage.waitClickable(registerPage.getInputName()).typeInput(registerPage.getInputName(),
                         name)
                 .clickElement(registerPage.getInputEmail()).typeInput(registerPage.getInputEmail(),
@@ -41,12 +42,13 @@ public class RegistrationTest extends BaseTest {
     @DisplayName("Registration not possible with password shorter then 6 chars")
     public void registrationNotPossibleWithShortPassword() throws InterruptedException {
         MainPage mainPage = new MainPage(driver);
+        sleep(1000);
         mainPage.waitClickable(mainPage.getButtonMyAccount()).clickLoginButton(mainPage.getButtonMyAccount());
         LoginPage loginPage = new LoginPage(driver);
-        sleep(200);
+        sleep(1000);
         loginPage.waitClickable(loginPage.getButtonRegisterLink()).clickRegister();
         RegisterPage registerPage = new RegisterPage(driver);
-        sleep(200);
+        sleep(1000);
         registerPage.waitClickable(registerPage.getInputName()).typeInput(registerPage.getInputName(),
                         email)
                 .clickElement(registerPage.getInputPassword()).typeInput(registerPage.getInputPassword(),

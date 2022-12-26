@@ -51,7 +51,7 @@ public class RegisterPage {
     }
 
     public RegisterPage waitClickable(WebElement element){ //ждем, пока элемент станет кликабельным
-        new WebDriverWait(driver, Duration.ofSeconds(300))
+        new WebDriverWait(driver, Duration.ofSeconds(600))
                 .until(ExpectedConditions.elementToBeClickable(element));
         return this;
     }
